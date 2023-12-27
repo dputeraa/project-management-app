@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ url('departement/create') }}" class="btn btn-outline-success">
+                        <a href="{{ url('position/create') }}" class="btn btn-outline-success">
                             <i class="menu-icon fa fa-plus"></i> <strong class="card-title">Add Data</strong>
                         </a>
                     </div>
@@ -48,18 +48,20 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Name Position</th>
                                         <th>Name Departement</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($departements as $departement)
+                                    @foreach ($positions as $position)
                                         @csrf
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $departement->name_departements }}</td>
+                                            <td>{{ $position->name_position }}</td>
+                                            <td>{{ $position->departement->name_departements }}</td>
                                             <td>
-                                                <a href="{{ url("departement/$departement->id_departement/edit") }}"
+                                                <a href="{{ url("position/$position->id_position/edit") }}"
                                                     class="btn btn-outline-primary">
                                                     <i class="fa fa-edit"></i>&nbsp; Edit
                                                 </a>
@@ -98,7 +100,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <a href="{{ url("departement/$departement->id_departement/delete") }}" class="btn btn-primary">
+                            <a href="{{ url("position/$position->id_position/delete") }}" class="btn btn-primary">
                                 &nbsp; Confirm
                             </a>
                         </div>
