@@ -4,6 +4,7 @@ use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,4 +52,12 @@ Route::get('project', [ProjectController::class, 'index']);
 Route::get('project/create', [ProjectController::class, 'create']);
 Route::get('project/{id}/edit', [ProjectController::class, 'edit']);
 Route::patch('project/{id}', [ProjectController::class, 'update']); //update
-Route::get('project/{id}/delete', [ProjectController::class, 'destroy']); //delet
+Route::get('project/{id}/delete', [ProjectController::class, 'destroy']); //delete
+
+// TASK
+Route::post('task', [TaskController::class, 'store']); //create
+Route::get('task', [TaskController::class, 'index']);
+Route::get('task/create', [TaskController::class, 'create']);
+Route::get('task/{id}/edit', [TaskController::class, 'edit']);
+Route::patch('task/{id}', [TaskController::class, 'update']); //update
+Route::get('task/{id}/delete', [TaskController::class, 'destroy']); //delete
