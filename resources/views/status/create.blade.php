@@ -11,7 +11,7 @@
     <div class="col-lg-14">
         <div class="card">
             <div class="card-header">
-                <a href="{{ url('position') }}" class="btn btn-outline-secondary">
+                <a href="{{ url('status') }}" class="btn btn-outline-secondary">
                     <i class="menu-icon fa fa-mail-reply-all"></i> <strong class="card-title">Back</strong>
                 </a>
             </div>
@@ -28,26 +28,13 @@
                 <!-- Credit Card -->
                 <div id="pay-invoice">
                     <div class="card-body">
-                        <form action="{{ url('position') }}" method="post" novalidate="novalidate">
+                        <form action="{{ url('status') }}" method="post" novalidate="novalidate">
                             @csrf
                             <div class="form-group">
-                                <label for="name_position" class="control-label mb-1">Name Position</label>
-                                <input id="name_position" name="name_position" type="text" class="form-control">
-                                @if ($errors->has('name_position'))
-                                    <span class="text-danger">{{ $errors->first('name_position') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group">
-                                <label for="departement_id" class="control-label mb-1">Departement</label>
-                                <select class="form-control" name="departement_id" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
-                                    @foreach ($departements as $departement)
-                                        <option value="{{ $departement->id_departement }}">
-                                            {{ $departement->name_departements }}</option>
-                                    @endforeach
-                                </select>
-                                @if ($errors->has('departement_id'))
-                                    <span class="text-danger">{{ $errors->first('departement_id') }}</span>
+                                <label for="name_status" class="control-label mb-1">Name Status</label>
+                                <input id="name_status" name="name_status" type="text" class="form-control">
+                                @if ($errors->has('name_status'))
+                                    <span class="text-danger">{{ $errors->first('name_status') }}</span>
                                 @endif
                             </div>
                             <div class="form-group">
