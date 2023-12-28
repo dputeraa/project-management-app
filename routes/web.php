@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\PositionController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,11 @@ Route::get('status/create', [StatusController::class, 'create']);
 Route::get('status/{id}/edit', [StatusController::class, 'edit']);
 Route::patch('status/{id}', [StatusController::class, 'update']); //update
 Route::get('status/{id}/delete', [StatusController::class, 'destroy']); //delete
+
+// PROJECT
+Route::post('project', [ProjectController::class, 'store']); //create
+Route::get('project', [ProjectController::class, 'index']);
+Route::get('project/create', [ProjectController::class, 'create']);
+Route::get('project/{id}/edit', [ProjectController::class, 'edit']);
+Route::patch('project/{id}', [ProjectController::class, 'update']); //update
+Route::get('project/{id}/delete', [ProjectController::class, 'destroy']); //delet
