@@ -5,6 +5,7 @@ use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,3 +62,11 @@ Route::get('task/create', [TaskController::class, 'create']);
 Route::get('task/{id}/edit', [TaskController::class, 'edit']);
 Route::patch('task/{id}', [TaskController::class, 'update']); //update
 Route::get('task/{id}/delete', [TaskController::class, 'destroy']); //delete
+
+// ADMIN
+Route::post('user', [UserController::class, 'store']); //create
+Route::get('user', [UserController::class, 'index']);
+Route::get('user/create', [UserController::class, 'create']);
+Route::get('user/{id}/edit', [UserController::class, 'edit']);
+Route::patch('user/{id}', [UserController::class, 'update']); //update
+Route::get('user/{id}/delete', [UserController::class, 'destroy']); //delete

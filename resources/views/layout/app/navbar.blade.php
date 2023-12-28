@@ -16,7 +16,7 @@
                 </li>
                 <li class="menu-title">USERS</li>
                 <li>
-                    <a href="{{ url('admin') }}"> <i class="menu-icon fa fa-users"></i>Admin</a>
+                    <a href="{{ url('user') }}"> <i class="menu-icon fa fa-users"></i>Admin</a>
                 </li>
                 <li>
                     <a href="{{ url('director') }}"> <i class="menu-icon fa fa-users"></i>Director</a>
