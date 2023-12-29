@@ -6,6 +6,7 @@ use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -88,3 +89,11 @@ Route::get('manager/create', [ManagerController::class, 'create']);
 Route::get('manager/{id}/edit', [ManagerController::class, 'edit']);
 Route::patch('manager/{id}', [ManagerController::class, 'update']); //update
 Route::get('manager/{id}/delete', [ManagerController::class, 'destroy']); //delete
+
+// SUPERVISOR
+Route::post('supervisor', [SupervisorController::class, 'store']); //create
+Route::get('supervisor', [SupervisorController::class, 'index']);
+Route::get('supervisor/create', [SupervisorController::class, 'create']);
+Route::get('supervisor/{id}/edit', [SupervisorController::class, 'edit']);
+Route::patch('supervisor/{id}', [SupervisorController::class, 'update']); //update
+Route::get('supervisor/{id}/delete', [SupervisorController::class, 'destroy']); //delete
