@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepartementController;
+use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StatusController;
@@ -70,3 +71,11 @@ Route::get('user/create', [UserController::class, 'create']);
 Route::get('user/{id}/edit', [UserController::class, 'edit']);
 Route::patch('user/{id}', [UserController::class, 'update']); //update
 Route::get('user/{id}/delete', [UserController::class, 'destroy']); //delete
+
+// DIRECTOR
+Route::post('director', [DirectorController::class, 'store']); //create
+Route::get('director', [DirectorController::class, 'index']);
+Route::get('director/create', [DirectorController::class, 'create']);
+Route::get('director/{id}/edit', [DirectorController::class, 'edit']);
+Route::patch('director/{id}', [DirectorController::class, 'update']); //update
+Route::get('director/{id}/delete', [DirectorController::class, 'destroy']); //delete
