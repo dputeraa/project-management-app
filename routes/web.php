@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AssignmentController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\EmployeeController;
@@ -27,6 +28,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('dashboard', [DashboardController::class, 'index']);
 
 // DEPARTEMENT
 Route::post('departement', [DepartementController::class, 'store']); //create
