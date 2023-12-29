@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ url('employee/create') }}" class="btn btn-outline-success">
+                        <a href="{{ url('assignment/create') }}" class="btn btn-outline-success">
                             <i class="menu-icon fa fa-plus"></i> <strong class="card-title">Add Data</strong>
                         </a>
                     </div>
@@ -48,24 +48,29 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
+                                        <th>Name Task</th>
+                                        <th>Description Task</th>
+                                        <th>Name Employee</th>
                                         <th>Position</th>
-                                        <th>Departement</th>
+                                        <th>Assignment Date</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($employees as $employee)
+                                    @foreach ($assignments as $assignment)
                                         @csrf
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $employee->user->name }}</td>
-                                            <td>{{ $employee->user->email }}</td>
-                                            <td>{{ $employee->position->name_position }}</td>
-                                            <td>{{ $employee->position->departement->name_departements }}</td>
+                                            <td>{{ $assignment->task->name_task }}</td>
+                                            <td>{{ $assignment->task->description_task }}</td>
+                                            <td>{{ $assignment->employee->user->name }}</td>
+                                            <td>{{ $assignment->employee->position->name_position }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($assignment->task->assignment_date)->format('l, d F Y') }}
+                                            </td>
+                                            <td>{{ $assignment->task->status->name_status }}</td>
                                             <td>
-                                                <a href="{{ url("employee/$employee->id_employee/edit") }}"
+                                                <a href="{{ url("assignment/$assignment->id_assignment/edit") }}"
                                                     class="btn btn-outline-primary">
                                                     <i class="fa fa-edit"></i>&nbsp; Edit
                                                 </a>
@@ -104,7 +109,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <a href="{{ url("employee/$employee->id_employee/delete") }}" class="btn btn-primary">
+                            <a href="{{ url("assignment/$assignment->id_assignment/delete") }}" class="btn btn-primary">
                                 &nbsp; Confirm
                             </a>
                         </div>

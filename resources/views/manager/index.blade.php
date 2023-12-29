@@ -51,6 +51,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Position</th>
+                                        <th>Departement</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -62,6 +63,7 @@
                                             <td>{{ $employee->user->name }}</td>
                                             <td>{{ $employee->user->email }}</td>
                                             <td>{{ $employee->position->name_position }}</td>
+                                            <td>{{ $employee->position->departement->name_departements }}</td>
                                             <td>
                                                 <a href="{{ url("manager/$employee->id_employee/edit") }}"
                                                     class="btn btn-outline-primary">

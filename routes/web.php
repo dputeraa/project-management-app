@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\EmployeeController;
@@ -106,3 +107,11 @@ Route::get('employee/create', [EmployeeController::class, 'create']);
 Route::get('employee/{id}/edit', [EmployeeController::class, 'edit']);
 Route::patch('employee/{id}', [EmployeeController::class, 'update']); //update
 Route::get('employee/{id}/delete', [EmployeeController::class, 'destroy']); //delete
+
+// ASSIGNMENT
+Route::post('assignment', [AssignmentController::class, 'store']); //create
+Route::get('assignment', [AssignmentController::class, 'index']);
+Route::get('assignment/create', [AssignmentController::class, 'create']);
+Route::get('assignment/{id}/edit', [AssignmentController::class, 'edit']);
+Route::patch('assignment/{id}', [AssignmentController::class, 'update']); //update
+Route::get('assignment/{id}/delete', [AssignmentController::class, 'destroy']); //delete

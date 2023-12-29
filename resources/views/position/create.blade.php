@@ -15,15 +15,6 @@
                     <i class="menu-icon fa fa-mail-reply-all"></i> <strong class="card-title">Back</strong>
                 </a>
             </div>
-            {{-- <div class="card-body">
-                <div>
-                    <h3 class="text-center"><b>TAMBAH DATA PRODUK</b></h3>
-                </div>
-            </div> --}}
-        </div>
-    </div>
-    <div class="col-lg-14">
-        <div class="card">
             <div class="card-body">
                 <!-- Credit Card -->
                 <div id="pay-invoice">
