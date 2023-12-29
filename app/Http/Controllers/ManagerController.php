@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
-class DirectorController extends Controller
+class ManagerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +18,12 @@ class DirectorController extends Controller
     public function index()
     {
         $employees = Employee::whereHas('user', function ($query) {
-            $query->where('role', 'director');
+            $query->where('role', 'manager');
         })->get();
         $view_data = [
             'employees' => $employees,
         ];
-        return view('director.index', $view_data);
+        return view('manager.index', $view_data);
     }
 
     /**
@@ -34,7 +34,7 @@ class DirectorController extends Controller
         $employees = Employee::all();
         $positions = Position::all();
         $users = User::all();
-        return view('director.create', compact('employees', 'positions', 'users'));
+        return view('manager.create', compact('employees', 'positions', 'users'));
     }
 
     /**
@@ -58,7 +58,7 @@ class DirectorController extends Controller
             'name' => $name,
             'email' => $email,
             'password' => $password,
-            'role' => 'director'
+            'role' => 'manager'
         ]);
 
         Employee::create([
@@ -67,7 +67,7 @@ class DirectorController extends Controller
         ]);
 
         Session::flash('success_add', 'Data berhasil ditambahkan.');
-        return redirect('director');
+        return redirect('manager');
     }
 
     /**
@@ -92,7 +92,7 @@ class DirectorController extends Controller
             'position' => $position,
             'user' => $user,
         ];
-        return view('director.edit', $view_data);
+        return view('manager.edit', $view_data);
     }
 
     /**
@@ -130,7 +130,7 @@ class DirectorController extends Controller
             ]); // sama seperti update ... where id = $id
         Session::flash('success_update', 'Data berhasil diubah.');
 
-        return redirect("director");
+        return redirect("manager");
     }
 
     /**
@@ -144,6 +144,6 @@ class DirectorController extends Controller
 
         Session::flash('success_destroy', 'Data berhasil dihapus.');
 
-        return redirect("director");
+        return redirect("manager");
     }
 }

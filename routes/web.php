@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\DirectorController;
+use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StatusController;
@@ -79,3 +80,11 @@ Route::get('director/create', [DirectorController::class, 'create']);
 Route::get('director/{id}/edit', [DirectorController::class, 'edit']);
 Route::patch('director/{id}', [DirectorController::class, 'update']); //update
 Route::get('director/{id}/delete', [DirectorController::class, 'destroy']); //delete
+
+// MANAGER
+Route::post('manager', [ManagerController::class, 'store']); //create
+Route::get('manager', [ManagerController::class, 'index']);
+Route::get('manager/create', [ManagerController::class, 'create']);
+Route::get('manager/{id}/edit', [ManagerController::class, 'edit']);
+Route::patch('manager/{id}', [ManagerController::class, 'update']); //update
+Route::get('manager/{id}/delete', [ManagerController::class, 'destroy']); //delete
