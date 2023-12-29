@@ -72,10 +72,14 @@
                                                     class="btn btn-outline-primary">
                                                     <i class="fa fa-edit"></i>&nbsp; Edit
                                                 </a>
-                                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                                <a href="{{ url("project/$project->id_project/delete") }}"
+                                                    onclick="return confirm('Apakah Anda Yakin Menghapus Data?');"
+                                                    class="btn btn-outline-danger"> <i class="fa fa-trash"></i>&nbsp;
+                                                    Delete</i></a>
+                                                {{-- <button type="button" class="btn btn-outline-danger" data-toggle="modal"
                                                     data-target="#staticModal">
                                                     <i class="fa fa-trash"></i>&nbsp; Delete
-                                                </button>
+                                                </button> --}}
                                             </td>
                                         </tr>
                                     @endforeach
