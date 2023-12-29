@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\DirectorController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProjectController;
@@ -97,3 +98,11 @@ Route::get('supervisor/create', [SupervisorController::class, 'create']);
 Route::get('supervisor/{id}/edit', [SupervisorController::class, 'edit']);
 Route::patch('supervisor/{id}', [SupervisorController::class, 'update']); //update
 Route::get('supervisor/{id}/delete', [SupervisorController::class, 'destroy']); //delete
+
+// EMPLOYEE
+Route::post('employee', [EmployeeController::class, 'store']); //create
+Route::get('employee', [EmployeeController::class, 'index']);
+Route::get('employee/create', [EmployeeController::class, 'create']);
+Route::get('employee/{id}/edit', [EmployeeController::class, 'edit']);
+Route::patch('employee/{id}', [EmployeeController::class, 'update']); //update
+Route::get('employee/{id}/delete', [EmployeeController::class, 'destroy']); //delete
