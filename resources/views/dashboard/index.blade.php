@@ -40,7 +40,8 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -150,7 +151,8 @@
 
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">{{ $allemployees->count() }}</span></div>
+                                    <div class="stat-text"><span class="count">{{ $allemployees->count() }}</span>
+                                    </div>
                                     <div class="stat-heading">All Employees</div>
                                 </div>
                             </div>
@@ -159,7 +161,8 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -179,7 +182,8 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -230,7 +234,8 @@
 
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">{{ $assignments->count() }}</span></div>
+                                    <div class="stat-text"><span class="count">{{ $assignments->count() }}</span>
+                                    </div>
                                     <div class="stat-heading">Assignments</div>
                                 </div>
                             </div>
