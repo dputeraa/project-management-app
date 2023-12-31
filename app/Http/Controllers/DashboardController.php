@@ -25,8 +25,8 @@ class DashboardController extends Controller
         $directors = User::where('role', 'director')->get();
         $managers = User::where('role', 'manager')->get();
         $supervisors = User::where('role', 'supervisor')->get();
-        $employees = User::where('role', 'supervisor')->get();
-        $allemployees = User::where('role', 'supervisor')->get();
+        $employees = User::where('role', 'employee')->get();
+        $allemployees = User::get();
         $statuss = Status::get();
         $projects = Project::get();
         $tasks = Task::get();

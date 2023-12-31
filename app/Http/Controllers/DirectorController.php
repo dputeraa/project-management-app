@@ -138,9 +138,9 @@ class DirectorController extends Controller
      */
     public function destroy(string $id_employee)
     {
-        $employee = Employee::where('id_employee', $id_employee);
-        $employee->delete();
-        // User::find($employee->user_id)->delete();
+        $employee = Employee::where('id_employee', $id_employee)->delete();
+        // $user = User::find($employee->user_id)->delete();
+        // $user = User::where('id', $employee->user_id)->delete();
 
         Session::flash('success_destroy', 'Data berhasil dihapus.');
 
